@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimathi Joram (Celesta Kim) - Professional CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .cv-container {
+            padding: 20mm;
+            max-width: 170mm;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2e7d32;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin: 2px 0;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #2e7d32;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .summary {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .skills-grid {
+            display: table;
+            width: 100%;
+        }
+
+        .skill-category {
+            display: table-cell;
+            width: 33%;
+            vertical-align: top;
+            padding-right: 15px;
+        }
+
+        .skill-category h4 {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .timeline-item {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: #2e7d32;
+            border-radius: 50%;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3px;
+        }
+
+        .timeline-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .timeline-date {
+            font-size: 11px;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .company {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .timeline-description {
+            font-size: 11px;
+            text-align: justify;
+            margin-bottom: 5px;
+        }
+
+        .achievements {
+            font-size: 11px;
+        }
+
+        .achievements li {
+            margin-bottom: 2px;
+        }
+
+        .projects-grid {
+            display: table;
+            width: 100%;
+        }
+
+        .project-item {
+            display: table-row;
+        }
+
+        .project-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .project-description {
+            font-size: 11px;
+            text-align: justify;
+            margin-bottom: 5px;
+        }
+
+        .project-tech {
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .stats-grid {
+            display: table;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .stat-item {
+            display: table-cell;
+            width: 33%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .stat-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2e7d32;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+        }
+
+        @media print {
+            body {
+                font-size: 11px;
+            }
+
+            .cv-container {
+                padding: 15mm;
+            }
+
+            .header {
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Fixed Download Button */
+        .fixed-download-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .fixed-download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+        }
+
+        .fixed-download-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Hide fixed button during PDF generation and printing */
+        @media print {
+            .fixed-download-btn {
+                display: none !important;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Fixed Download Button -->
+    <button class="fixed-download-btn" id="downloadBtn">
+        <span>📄</span>
+        <span>Download PDF</span>
+    </button>
+
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name">Kimathi Joram </h1>
+            <h2 class="title">GIS Engineer  & Digital Designer</h2>
+            <div class="contact-info">
+                <p>Phone: +254101370035 | WhatsApp: wa.me/254101370035</p>
+                <p>Email: celestakim018@gmail.com</p>
+                <p>LinkedIn: linkedin.com/in/celesta-kim-21020232b | GitHub: github.com/CELESTAKIM</p>
+                <p>YouTube: youtube.com/@CELESTAKIM_GIS | X: x.com/GIS_CELESTAKIM</p>
+                <p>Mastodon: mastodon.social/@CELESTAKIM_GIS</p>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h3 class="section-title">Professional Summary</h3>
+            <p class="summary">
+                Passionate Geospatial Engineer and Digital Cartographer specializing in GIS, remote sensing, and interactive web mapping. Currently pursuing BSc in GIS at Dedan Kimathi University of Technology while leading geospatial initiatives and creating educational content.
+
+Expert in ArcGIS Pro, QGIS, Google Earth Engine, and web development technologies. Active contributor to OpenStreetMap and leader of GDEV YouthMappers OSM Team. Creating AI-powered geospatial solutions and educational YouTube tutorials.
+            </p>
+        </div>
+
+        <!-- Key Statistics -->
+        <div class="section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Web Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Lines of Code</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills & Expertise -->
+        <div class="section">
+            <h3 class="section-title">Skills & Expertise</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>GIS & Remote Sensing</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ArcGIS Pro</span>
+                        <span class="skill-tag">ArcMap</span>
+                        <span class="skill-tag">QGIS</span>
+                        <span class="skill-tag">ERDAS Imagine</span>
+                        <span class="skill-tag">ENVI</span>
+                        <span class="skill-tag">Google Earth Engine</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Programming & Data</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">GEE JS</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">KoboToolbox</span>
+                        <span class="skill-tag">Jupyter Notebook</span>
+                        <span class="skill-tag">Google Colab</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Web Development & Design</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Frontend Development</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <!-- <span class="skill-tag">React (30%)</span> -->
+                        <span class="skill-tag">Leaflet.js</span>
+                        <!-- <span class="skill-tag">UI/UX Design</span> -->
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Multimedia & Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OBS Studio</span>
+                        <span class="skill-tag">CapCut</span>
+                        <span class="skill-tag">Canva Pro</span>
+                        <span class="skill-tag">Figma</span>
+                        <!-- <span class="skill-tag">Adobe Creative Suite</span> -->
+                        <span class="skill-tag">Video Editing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <h3 class="section-title">Professional Experience</h3>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">Web Design & GIS Enthusiast</span>
+                    <span class="timeline-date">2023 - Present</span>
+                </div>
+                <p class="company">Freelance & Open Source Projects</p>
+                <p class="timeline-description">Developing interactive web applications and contributing to open-source geospatial projects. Specializing in frontend development with modern web technologies and GIS integration.</p>
+                <ul class="achievements">
+                    <li>Built responsive web applications</li>
+                    <li>Integrated GIS technologies with web platforms</li>
+                    <li>Created interactive mapping solutions</li>
+                    <li>Contributed to open-source GIS tools</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">GDEV Hackathon Winner</span>
+                    <span class="timeline-date">2024</span>
+                </div>
+                <p class="company">Geospatial Developer Club (GDEV) - Group project led by Sir James Smart</p>
+                <p class="timeline-description">Won first place in GDEV Hackathon by developing an innovative web-based geospatial tool and interactive mapping features.</p>
+                <ul class="achievements">
+                    <li>Designed for Kericho ea farms</li>
+                    <!-- <li>Implemented responsive UI/UX</li> -->
+                    <li>Integrated mapping functionalities</li>
+                    <li>Colab</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">Web Development Project</span>
+                    <span class="timeline-date">2024</span>
+                </div>
+                <p class="company">Personal & Collaborative Projects</p>
+                <p class="timeline-description">Developed various web applications focusing on user experience and modern web technologies. Created portfolio websites, interactive tools, and educational platforms.</p>
+                <ul class="achievements">
+                    <li>Built multiple responsive websites</li>
+                    <li>Implemented modern web frameworks</li>
+                    <li>Created user-friendly interfaces</li>
+                    <li>Optimized for performance and accessibility</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">YouTube GIS Tutor</span>
+                    <span class="timeline-date">2024 - Present</span>
+                </div>
+                <p class="company">@CELESTAKIM_GIS Channel</p>
+                <p class="timeline-description">Creating and sharing valuable tutorials on USGS data, Google Earth Engine, map-making, and JavaScript coding. Building a community of GIS learners and professionals worldwide.</p>
+                <ul class="achievements">
+                    <li>1000+ viewers reached</li>
+                    <li>50+ educational videos created</li>
+                    <li>Covered advanced GIS topics</li>
+                    <li>Global audience engagement</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">OSM Contributor</span>
+                    <span class="timeline-date">2023 - Present</span>
+                </div>
+                <p class="company">OpenStreetMap Community</p>
+                <p class="timeline-description">Consistently contributing to OpenStreetMap's African mapping initiatives, improving geospatial data availability and fostering community collaboration in mapping projects.</p>
+                <ul class="achievements">
+                    <li>Mapped 30+ African regions</li>
+                    <li>Participated in Mapathon events</li>
+                    <li>Improved data accuracy by 40%</li>
+                    <li>Mentored new OSM contributors</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">Data Analysis Certification</span>
+                    <span class="timeline-date">2023</span>
+                </div>
+                <p class="company">Udemy Certification</p>
+                <p class="timeline-description">Completed comprehensive Data Analysis certification from Udemy, enhancing skills in data interpretation, statistical analysis, and insights generation for geospatial applications.</p>
+                <ul class="achievements">
+                    <li>Mastered data visualization techniques</li>
+                    <li>Learned advanced statistical methods</li>
+                    <li>Gained proficiency in data storytelling</li>
+                    <li>Applied skills to GIS projects</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h3 class="section-title">Education</h3>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">Bachelor of Science in Geospatial Information Science and Remote Sensing</span>
+                    <span class="timeline-date">2023 - Present</span>
+                </div>
+                <p class="company">Dedan Kimathi University of Technology</p>
+                <p class="timeline-description">Comprehensive program covering advanced geospatial analysis, remote sensing technologies, spatial databases, and GIS programming.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">GIS Research & Innovation</span>
+                    <span class="timeline-date">2024 - Present</span>
+                </div>
+                <p class="company">GDEV YouthMappers & Research Projects</p>
+                <p class="timeline-description">Active research in LULC analysis, NDVI monitoring, and site suitability modeling. Winner of GDEV Hackathon project focused on tea land monitoring.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="timeline-title">Certifications & Achievements</span>
+                    <span class="timeline-date">2023 - 2024</span>
+                </div>
+                <p class="company">Professional Development & Academic Awards</p>
+                <p class="timeline-description">Symposium participation certificates, GDEV Hackathon winner (Tea monitoring project), and continuous professional development in GIS technologies.</p>
+            </div>
+        </div>
+
+        <!-- Featured Projects -->
+        <div class="section">
+            <h3 class="section-title">Featured Projects</h3>
+
+            <div class="project-item">
+                <h4 class="project-title">CROP TYPE MAPPING (Complete)</h4>
+                <p class="project-description">Advanced crop type mapping project using field data collection and spatial analysis techniques for agricultural monitoring and management.</p>
+                <p class="project-tech">KoboToolbox, QField, QGIS</p>
+            </div>
+
+            <div class="project-item">
+                <h4 class="project-title">NDVI Analysis Tools</h4>
+                <p class="project-description">Free tools for monitoring vegetation changes in tea plantations (Kericho) and miraa farms (Igembe) using satellite imagery and NDVI analysis.</p>
+                <p class="project-tech">Python, GEE, GitHub</p>
+            </div>
+
+            <div class="project-item">
+                <h4 class="project-title">Site Suitability Modeling</h4>
+                <p class="project-description">Cemetery and health center siting in Othaya using multi-criteria analysis in ArcGIS Pro. Factors include accessibility, environmental impact, and land use.</p>
+                <p class="project-tech">ArcGIS Pro, Python, Google Colab</p>
+            </div>
+
+            <div class="project-item">
+                <h4 class="project-title">Advanced Mapper for HOT</h4>
+                <p class="project-description">Developed a comprehensive web mapping application for Humanitarian OpenStreetMap Team with modern UI/UX design, interactive features, and responsive layout.</p>
+                <p class="project-tech">JavaScript, Leaflet.js, HTML/CSS, Web Development</p>
+            </div>
+
+            <div class="project-item">
+                <h4 class="project-title">Interactive GIS Web Applications</h4>
+                <p class="project-description">Created multiple interactive web applications integrating GIS data with modern web technologies, focusing on user experience and responsive design.</p>
+                <p class="project-tech">JavaScript, HTML/CSS, Leaflet.js, UI/UX Design</p>
+            </div>
+
+            <div class="project-item">
+                <h4 class="project-title">30-Day African Map Challenge</h4>
+                <p class="project-description">Active participation in community mapping initiatives, contributing to OpenStreetMap data improvement across African regions.</p>
+                <p class="project-tech">OpenStreetMap, Community Mapping</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 30px; padding-top: 15px; border-top: 1px solid #ddd; font-size: 10px; color: #666;">
+            <p>© 2025 Kimathi Joram (Celesta Kim). Crafted with passion for web development.</p>
+        </div>
+    </div>
+
+    <script>
+        // PDF Generation Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.getElementById('downloadBtn');
+
+            // Add hover effects to download button
+            downloadBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 6px 20px rgba(46, 125, 50, 0.4)';
+            });
+
+            downloadBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 15px rgba(46, 125, 50, 0.3)';
+            });
+
+            // Download button click handler
+            downloadBtn.addEventListener('click', function() {
+                // Disable button during generation
+                this.disabled = true;
+                this.innerHTML = '<span>⏳</span><span>Generating...</span>';
+
+                if (window.html2pdf) {
+                    const element = document.querySelector('.cv-container');
+                    const opt = {
+                        margin: 0.5,
+                        filename: 'Kimathi_Joram_Professional_CV.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { scale: 2, useCORS: true },
+                        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                    };
+
+                    html2pdf().set(opt).from(element).save().then(() => {
+                        // Re-enable button after generation
+                        this.disabled = false;
+                        this.innerHTML = '<span>📄</span><span>Download PDF</span>';
+                    }).catch(() => {
+                        // Re-enable button on error
+                        this.disabled = false;
+                        this.innerHTML = '<span>❌</span><span>Failed - Retry</span>';
+                        setTimeout(() => {
+                            this.innerHTML = '<span>📄</span><span>Download PDF</span>';
+                        }, 3000);
+                    });
+                } else {
+                    alert('PDF generation library not loaded. Please refresh the page and try again.');
+                    this.disabled = false;
+                    this.innerHTML = '<span>📄</span><span>Download PDF</span>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
